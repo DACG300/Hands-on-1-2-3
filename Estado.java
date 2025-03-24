@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Estado {
     int x, y;
     char tipo;
@@ -10,16 +8,13 @@ public class Estado {
         this.tipo = tipo;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Estado estado = (Estado) obj;
-        return x == estado.x && y == estado.y;
+    public boolean esIgual(Estado estado) {
+        if (estado == null) return false;
+        return this.x == estado.x && this.y == estado.y;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y);
+        return (x * 31) + y;
     }
 }

@@ -12,5 +12,9 @@ public class Main {
         BusquedaBFS bfs = new BusquedaBFS();
         List<String> solucionBFS = bfs.buscar(laberinto);
         System.out.println("Solución BFS: " + (solucionBFS != null ? solucionBFS : "No encontrada"));
+
+        BusquedaHillClimbing hillClimbing = new BusquedaHillClimbing();
+        List<String> solucionHillClimbing = hillClimbing.buscar(laberinto);
+        System.out.println("Solución Hill Climbing: " + (solucionHillClimbing != null ? solucionHillClimbing : "No encontrada"));
     }
 }
